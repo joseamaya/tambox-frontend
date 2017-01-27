@@ -7,8 +7,8 @@ Se debe tener instalado Node.js y npm.
 Instalación
 -----------
 
-npm install
+- npm install
 
-npm install -g bower
+- npm install -g bower
 
-bower install --config.interactive=false --allow-root
+- bower install --config.interactive=false --allow-root
