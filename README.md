@@ -8,5 +8,7 @@ Instalación
 -----------
 
 npm install
+
 npm install -g bower
+
 bower install --config.interactive=false --allow-root
