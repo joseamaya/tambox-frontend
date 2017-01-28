@@ -2,11 +2,23 @@
 <html ng-app="TamboxApplication">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>Tambox</title>
 
     <!-- Angular Setup -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script type="text/javascript" src="bower_components/ngDialog/js/ngDialog.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route-segment/build/angular-route-segment.js"></script>
 
     <!-- Application Setup -->
     <script src="app/appRoutes.js"></script>
@@ -17,6 +29,32 @@
     <script src="app/components/administracion/controllers/administracion.control.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#not-google-plus-nav">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Not Google Plus</a>
+        </div> <!-- ./navbar-header -->
+
+        <div class="collapse navbar-collapse" id="not-google-plus-nav">
+            <ul class="nav navbar-nav pull-right">
+                {% if user.is_authenticated %}
+                <li><a href="/+{{ user.username }}">+{{ user.username }}</a></li>
+                <li><a href="/+{{ user.username }}/settings">Settings</a></li>
+                <li><a href="javascript:void(0)">Logout</a></li>
+                {% else %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {% endif %}
+            </ul>
+        </div> <!-- /.collapse.navbar-collapse -->
+    </div> <!-- /.container-fluid -->
+</nav>
 <ui-view></ui-view>
 </body>
 </html>
