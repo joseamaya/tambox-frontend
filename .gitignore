@@ -1,4 +1,7 @@
-bower_components
+# Node modules
+node_modules/
+npm-debug.log
+bower_components/
 .idea/modules.xml
 .idea/tambox-frontend.iml
 .idea/workspace.xml

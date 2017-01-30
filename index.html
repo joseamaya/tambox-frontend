@@ -1,60 +1,51 @@
 <!DOCTYPE html>
-<html ng-app="TamboxApplication">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Tambox</title>
+<html ng-app="tambox">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Tambox</title>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/material.css" />
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/ripples.min.css" />
+        <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog.css" />
+        <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog-theme-default.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tambox-nav">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/">Tambox</a>
+                </div>
 
-    <!-- Angular Setup -->
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
-    <script type="text/javascript" src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
-    <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
-    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-    <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script type="text/javascript" src="bower_components/ngDialog/js/ngDialog.js"></script>
-    <script type="text/javascript" src="bower_components/angular-route-segment/build/angular-route-segment.js"></script>
-
-    <!-- Application Setup -->
-    <script src="app/appRoutes.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/components/administracion/services/trabajador.service.js"></script>
-
-    <!-- Controllers -->
-    <script src="app/components/administracion/controllers/administracion.control.js"></script>
-</head>
-<body>
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#not-google-plus-nav">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Not Google Plus</a>
-        </div> <!-- ./navbar-header -->
-
-        <div class="collapse navbar-collapse" id="not-google-plus-nav">
-            <ul class="nav navbar-nav pull-right">
-                {% if user.is_authenticated %}
-                <li><a href="/+{{ user.username }}">+{{ user.username }}</a></li>
-                <li><a href="/+{{ user.username }}/settings">Settings</a></li>
-                <li><a href="javascript:void(0)">Logout</a></li>
-                {% else %}
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-                {% endif %}
-            </ul>
-        </div> <!-- /.collapse.navbar-collapse -->
-    </div> <!-- /.container-fluid -->
-</nav>
-<ui-view></ui-view>
-</body>
+                <div class="collapse navbar-collapse" id="tambox-nav">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="#/login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+        <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script type="text/javascript" src="bower_components/ngDialog/js/ngDialog.js"></script>
+        <script type="text/javascript" src="app/tambox.js"></script>
+        <script type="text/javascript" src="app/tambox.routes.js"></script>
+        <script type="text/javascript" src="app/authentication/authentication.module.js"></script>
+        <script type="text/javascript" src="app/authentication/controllers/login.controller.js"></script>
+        <script type="text/javascript" src="app/authentication/services/authentication.service.js"></script>
+    </body>
 </html>
