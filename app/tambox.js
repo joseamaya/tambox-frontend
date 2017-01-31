@@ -5,6 +5,7 @@
 
 angular
     .module('tambox', [
+        'tambox.config',
         'tambox.routes',
         'tambox.authentication'
     ]);

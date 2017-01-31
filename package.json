@@ -1,4 +1,8 @@
 {
   "name": "tambox-frontend",
-  "description": "Frontend para Tambox"
+  "description": "Frontend para Tambox",
+  "dependencies": {
+    "bower": "^1.3.12",
+    "express": "^4.13.4"
+  }
 }
