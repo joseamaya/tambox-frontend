@@ -6,12 +6,12 @@ Se debe tener instalado Node.js y npm.
 Instalación
 -----------
 
+- cd tambox-frontend
+
 - npm install
 
 - npm install -g bower
 
 - bower install
-
-- cd tambox-frontend
 
 - node server.js
